@@ -30,9 +30,7 @@ class RoutesUser {
 
         // Disable user
         this.router.delete("/:id_user", (req: express.Request, res: express.Response) => {
-            res.status(200).send({
-                message: "DELETE request DISABLE User!!",
-            });
+            this.userController.disabledUser(req, res);
         });
 
     }

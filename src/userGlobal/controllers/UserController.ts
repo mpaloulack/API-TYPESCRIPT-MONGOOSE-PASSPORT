@@ -134,8 +134,8 @@ export class UserController {
             if (!isAdmin) {
                 query = { _id: req.user._id };
             } else {
-                if (req.params.id_user) {
-                    query = { _id: req.params.id_user };
+                if (req.params.userId) {
+                    query = { _id: req.params.userId };
 
                 } else {
                     return this.responsesMsg.responseMsg(401, "Error with userId", res);

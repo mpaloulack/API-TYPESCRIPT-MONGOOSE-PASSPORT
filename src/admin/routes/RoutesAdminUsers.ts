@@ -20,16 +20,10 @@ class RoutesAdminUsers {
             this.userAdminController.getAllUsers(req, res);
         });
 
-        // Get All users
-        this.router.put("/:id_user", this.passportConfig.authorizedAdminValidate,
+        // Update profile user
+        this.router.put("/:userId", this.passportConfig.authorizedAdminValidate,
         (req: express.Request, res: express.Response) => {
             this.userController.updateProfile(req, res, true);
-        });
-
-        // Disable user account
-        this.router.put("/disabled/:userId", this.passportConfig.authorizedAdminValidate,
-        (req: express.Request, res: express.Response) => {
-            this.userAdminController.disabledUser(req, res);
         });
 
         // Disable user account
@@ -44,13 +38,13 @@ class RoutesAdminUsers {
             this.userAdminController.addAdminUser(req, res);
         });
 
-        // Add admin role user account
+        // Add Moderator role user account
         this.router.put("/putModerator/:userId", this.passportConfig.authorizedAdminValidate,
         (req: express.Request, res: express.Response) => {
             this.userAdminController.addModeratorUser(req, res);
         });
 
-        // Add admin role user account
+        // Add Super Admin role user account
         this.router.put("/putSuperAdmin/:userId", this.passportConfig.authorizedAdminValidate,
         (req: express.Request, res: express.Response) => {
             this.userAdminController.addSuperAdminUser(req, res);
