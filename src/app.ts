@@ -11,7 +11,6 @@ import { PassportConfig } from "./middleware/passport";
 import compression from "compression";
 
 class App {
-
     public app: express.Application;
     public routePrv: Routes;
 

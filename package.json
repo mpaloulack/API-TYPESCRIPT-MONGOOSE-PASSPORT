@@ -6,9 +6,10 @@
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
-    "debug": "nodemon ./dist/server.js",
+    "debug": "nodemon",
     "start": "npm run prebuild && npm run build && node ./dist/server.js",
-    "tests": "mocha -r ts-node/register src/**/tests/*.spec.ts --timeout 10000"
+    "tests": "mocha -r ts-node/register src/**/tests/*.spec.ts --timeout 10000",
+    "initDataDB": "npm run prebuild && npm run build && node ./dist/server.js --initDB"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "express-openapi": "^4.0.0",
     "helmet": "^3.15.0",
     "jsonwebtoken": "^8.4.0",
+    "minimist": "^1.2.0",
     "mongoose": "^5.3.12",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.9.1",

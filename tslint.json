@@ -5,10 +5,18 @@
     ],
     "jsRules": {},
     "rules": {
-        "trailing-comma": [ false ],
-        "ordered-imports":false,
+        "trailing-comma": [
+            false
+        ],
+        "ordered-imports": false,
         "object-literal-sort-keys": false,
         "member-ordering": false
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "*.json",
+            "**/*.json"
+        ]
+    }
 }
